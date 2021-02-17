@@ -1,0 +1,20 @@
+<view class="page" style="background-color:white;">
+  <view class="page__hd">
+    <view class="page__title bold">扫码登录确认</view>
+    <view class="page__desc text">来自PC端的登录请求</view>
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <view class="weui-flex" style="flex-direction:column;">
+      <image src="../../static/images/pc.svg" alt="pc" style="width:auto;"></image>
+      <view class="weu i-flex__item text-center">
+        <view class="text-center text">是否允许来自 浙江省宁波市 的登录请求？</view>
+        <view class="text-center text">IP：39.186.*.*</view>
+      </view>
+      <a style="margin-top:150rpx;" class="weui-btn weui-btn_primary"><navigator url="/pages/scanLogin/success" >登录成功页</navigator></a>
+      <a class="weui-btn weui-btn_primary"><navigator url="/pages/scanLogin/wait" >登陆页面2</navigator></a>
+      <a class="weui-btn weui-btn_default">取消</a>
+    </view>
+
+
+  </view>
+</view>

@@ -1,0 +1,48 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/scanLogin/index",
+          "pathName": "pages/scanLogin/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/scanLogin/success",
+          "pathName": "pages/scanLogin/success",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/createMeeting/index",
+          "pathName": "pages/createMeeting/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/scanLogin/wait",
+          "pathName": "pages/scanLogin/wait",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

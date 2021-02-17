@@ -1,0 +1,173 @@
+<view class="page" data-weui-theme="{{theme}}">
+  <view id="page" class="weui-form text {{selectPeopleDialog?'bodyLock':''}}"
+    style="width:100%;{{'top:'+pageTop+'px'}}">
+    <view class="weui-form__text-area">
+      <h2 class="weui-form__title bold">新建会议</h2>
+
+    </view>
+    <view class="weui-form__control-area">
+      <view class="weui-cells__group weui-cells__group_form">
+        <view class="weui-cells__title">基本信息</view>
+        <view class="weui-cells weui-cells_form">
+          <view class="weui-cell weui-cell_active">
+            <view class="weui-cell__hd"><label class="weui-label">会议主题</label></view>
+            <view class="weui-cell__bd">
+              <input class="weui-input" placeholder="李国宇发起的会议" placeholder-class="weui-input__placeholder" />
+            </view>
+          </view>
+          <view class="weui-cell weui-cell_active weui-cell_select weui-cell_select-after">
+            <view class="weui-cell__hd">
+              <label class="weui-label" style="width: 4em">会议室</label>
+            </view>
+            <view class="weui-cell__bd">
+              <picker bindchange="bindPicker1Change" range="{{meetingRooms}}">
+                <view class="weui-select">{{meetingRooms[meetingRoomIndex]}}</view>
+              </picker>
+            </view>
+          </view>
+
+        </view>
+      </view>
+      <view class="weui-cells__group weui-cells__group_form">
+        <view class="weui-cells__title">会议时间</view>
+        <view class="weui-cells weui-cells_form">
+          <view class="weui-cell weui-cell_active weui-cell_select weui-cell_select-after">
+            <view class="weui-cell__hd">
+              <label class="weui-label" style="width: 4em">日期</label>
+            </view>
+            <view class="weui-cell__bd">
+              <picker mode="date" value="{{date}}" start="2021-02-17" end="2025-12-31" bindchange="bindDateChange">
+                <view class="weui-select">{{date}}</view>
+              </picker>
+            </view>
+          </view>
+          <view class="weui-cell weui-cell_active weui-cell_select weui-cell_select-after">
+            <view class="weui-cell__hd">
+              <label class="weui-label" style="width: 4em">开始时间</label>
+            </view>
+            <view class="weui-cell__bd">
+
+              <picker mode="time" value="{{timeBegin}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+                <view class="weui-select">{{timeBegin}}</view>
+              </picker>
+            </view>
+          </view>
+          <view class="weui-cell weui-cell_active weui-cell_select weui-cell_select-after">
+            <view class="weui-cell__hd">
+              <label class="weui-label" style="width: 4em">结束时间</label>
+            </view>
+            <view class="weui-cell__bd">
+
+              <picker mode="time" value="{{timeEnd}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+                <view class="weui-select">{{timeEnd}}</view>
+              </picker>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="weui-cells__group weui-cells__group_form">
+        <view class="weui-cells__title">补充信息</view>
+        <view class="weui-cells weui-cells_form">
+          <view class="weui-cell weui-cell_active weui-cell_select weui-cell_select-after"
+            bindtap="openSelectPeopleDialog">
+            <view class="weui-cell__hd">
+              <label class="weui-label" style="width: 4em">参会人</label>
+            </view>
+            <view class="weui-cell__bd">
+
+              <a class="weui-select" bindtap="openSelectPeopleDialog">李国宇等3人</a>
+            </view>
+          </view>
+          <view class="weui-cell weui-cell_active weui-cell_switch">
+                        <view class="weui-cell__bd">向参会人发送通知</view>
+                        <view class="weui-cell__ft">
+                            <label class="weui-switch-cp">
+                                <checkbox class="weui-switch-cp__input" checked="true" />
+                                <view class="weui-switch-cp__box"></view>
+                            </label>
+                        </view>
+                    </view>
+        </view>
+      </view>
+      <view class="weui-cells__group weui-cells__group_form">
+        <view class="weui-cells__title">备注</view>
+        <view class="weui-cells weui-cells_form">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <textarea class="weui-textarea" placeholder="请在这填写会议备注" placeholder-class="weui-input__placeholder"
+                rows="3"></textarea>
+              <view class="weui-textarea-counter"><span>0</span>/200</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-form__tips-area">
+      <view class="weui-form__tips">
+        会议创建成功后无法编辑，请谨慎核验！
+      </view>
+    </view>
+    <view class="weui-form__opr-area">
+      <a class="weui-btn weui-btn_primary">创建会议</a>
+    </view>
+
+    <view class="weui-form__extra-area">
+      <view class="weui-footer">
+        <view class="weui-footer__text">EasyMeeting 会易 v1.0</view>
+      </view>
+    </view>
+  </view>
+
+  <!--参会人选择dialog-->
+  <view class="fadeIn" wx:if="{{selectPeopleDialog}}">
+    <view class="weui-mask" catchtap="close" catchtouchmove="return" style="z-index:10"></view>
+    <view class="weui-half-screen-dialog" style="z-index:15">
+      <view class="weui-half-screen-dialog__hd">
+        <view class="weui-half-screen-dialog__hd__side" bindtap="close">
+          <a class="weui-icon-btn">返回<i class="weui-icon-back-arrow-thin"></i></a>
+        </view>
+        <view class="weui-half-screen-dialog__hd__main">
+          <strong class="weui-half-screen-dialog__title">选择参会人</strong>
+
+        </view>
+        <view class="weui-half-screen-dialog__hd__side">
+          <a class="weui-icon-btn">更多<i class="weui-icon-more"></i></a>
+        </view>
+      </view>
+      <view class="weui-half-screen-dialog__bd" style="padding-bottom: 10px;">
+        <view class="weui-half-screen-dialog__desc">
+          请选择参会人
+        </view>
+
+      </view>
+      <scroll-view scroll-y="true" style="max-height: 700rpx;margin:20rpx;">
+        <view class="weui-form"
+          style="padding:calc(5px + env(safe-area-inset-top)) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);">
+          <view class="weui-form__control-area" style="margin:0px;">
+            <view class="weui-cells__group weui-cells__group_form">
+              <view class="weui-cells weui-cells_checkbox">
+                <checkbox-group bindchange="checkboxChange">
+                  <label class="weui-cell weui-cell_active weui-check__label" wx:for="{{members}}" wx:key="index">
+                    <view class="weui-cell__hd">
+                      <checkbox class="weui-check" value="{{item.index}}" checked="{{item.checked}}" />
+                      <i class="weui-icon-checked"></i>
+                    </view>
+                    <view class="weui-cell__bd">
+                      <view>{{item.name}}</view>
+                    </view>
+                  </label>
+                </checkbox-group>
+
+              </view>
+            </view>
+          </view>
+
+        </view>
+      </scroll-view>
+        <view class="weui-half-screen-dialog__ft">
+          <a class="weui-btn weui-btn_default" bindtap="close">清空选择</a>
+          <a class="weui-btn weui-btn_primary" bindtap="close">确认</a>
+        </view>
+    </view>
+  </view>
+</view>

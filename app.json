@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/scanLogin/index",
+    "pages/scanLogin/success",
+    "pages/createMeeting/index",
+    "pages/scanLogin/wait"
+  ],
+  "entryPagePath": "pages/index/index",
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "EasyMeeting",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#eeeeee"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  },
+  "darkmode": false,
+  "lazyCodeLoading": "requiredComponents"
+}

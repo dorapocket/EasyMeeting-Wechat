@@ -1,0 +1,27 @@
+/*!
+ * WeUI v2.4.3 (https://github.com/weui/weui-wxss)
+ * Copyright 2021 Tencent, Inc.
+ * Licensed under the MIT license
+ */
+.page {
+  height: 100%
+}
+
+.weui-label {
+  width: 4.1em
+}
+
+.weui-select {
+  z-index: auto;
+}
+.bodyLock{
+  top:0px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  z-index: 0;
+}
+.weui-check__label{
+  padding-left:10px!important;
+}
