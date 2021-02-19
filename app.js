@@ -2,26 +2,26 @@
 App({
   onLaunch() {
     // 下载字体
-    wx.loadFontFace({
+    /*wx.loadFontFace({
       global:true,
       family:"HanYiQiHei-55S",
-      source:"https://easymeeting-statics.oss-cn-hangzhou.aliyuncs.com/fonts/hy-55s.ttf",
+      source:"https://static.cdn.easymeeting.lgyserver.top/static/fonts/hy-55s.ttf",
     });
     wx.loadFontFace({
       global:true,
       family:"HanYiQiHei-40S",
-      source:"https://easymeeting-statics.oss-cn-hangzhou.aliyuncs.com/fonts/hy-40s.ttf",
+      source:"https://static.cdn.easymeeting.lgyserver.top/static/fonts/hy-40s.ttf",
     });
     wx.loadFontFace({
       global:true,
       family:"Myriadpro Light",
-      source:"https://easymeeting-statics.oss-cn-hangzhou.aliyuncs.com/fonts/myriadpro-light.ttf",
+      source:"https://static.cdn.easymeeting.lgyserver.top/static/fonts/myriadpro-light.ttf",
     });
     wx.loadFontFace({
       global:true,
       family:"Myriadpro Regular",
-      source:"https://easymeeting-statics.oss-cn-hangzhou.aliyuncs.com/fonts/myriadpro-regular.ttf",
-    });
+      source:"https://static.cdn.easymeeting.lgyserver.top/static/fonts/myriadpro-regular.ttf",
+    });*/
     // 展示本地存储能力
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())

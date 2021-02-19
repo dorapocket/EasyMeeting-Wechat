@@ -1,0 +1,38 @@
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title bold">日程</view>
+    <view class="page__desc text">以下是您已安排的日程</view>
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <view class="kind-list">
+      <view class="weui-panel">
+        <view class="weui-panel__bd">
+          <block wx:for="{{timeLine}}" wx:key="index">
+            <view class='weui-cell-list'>
+              <view class='weui-cell-circle'></view>
+              <view class='weui-cell-line'>
+                <view class='weui-cell-time'>{{item.time}}</view>
+                <view class='weui-cell-event' wx:for="{{item.desc}}" wx:for-item="desc">
+                  <view>{{desc}}</view>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+        <view wx:if="{{notice.length==0}}" style="color:var(--weui-FG-1);text-align:center;padding:40rpx;">
+          没有未处理的通知
+        </view>
+      </view>
+      <view style="width:100%;margin-top:10px;color:var(--weui-FG-1);text-align:center;font-size:0.7em;">—— 到底了 ——
+      </view>
+    </view>
+  </view>
+  <view class="page__ft">
+    <view class="weui-footer">
+      <view class="weui-footer__text text">EasyMeeting 会易 v1.0</view>
+    </view>
+  </view>
+
+
+
+</view>

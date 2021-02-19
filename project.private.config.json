@@ -41,6 +41,17 @@
           "pathName": "pages/scanLogin/wait",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/notice/index",
+          "pathName": "pages/notice/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/notice/all",
+          "pathName": "pages/notice/all",
+          "scene": null
         }
       ]
     }

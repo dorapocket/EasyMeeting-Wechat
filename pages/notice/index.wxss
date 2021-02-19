@@ -1,0 +1,4 @@
+/* pages/notice/index.wxss */
+.weui-panel__bd{
+  border-bottom: 1px solid var(--weui-FG-3)!important;
+}

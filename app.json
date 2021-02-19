@@ -5,7 +5,12 @@
     "pages/scanLogin/index",
     "pages/scanLogin/success",
     "pages/createMeeting/index",
-    "pages/scanLogin/wait"
+    "pages/scanLogin/wait",
+    "pages/notice/index",
+    "pages/notice/all",
+    "pages/schedule/index",
+    "pages/admin/meetingRoom",
+    "pages/admin/meetingAdmin"
   ],
   "entryPagePath": "pages/index/index",
   "window": {

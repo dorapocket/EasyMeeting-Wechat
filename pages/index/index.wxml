@@ -7,7 +7,7 @@
     <view class="kind-list">
       <block wx:for="{{list}}" wx:key="id">
         <view class="kind-list__item">
-          <view id="{{item.id}}" class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}"
+          <view id="{{item.id}}" class="weui-flex kind-list__item-hd {{item.open&&item.sub ? 'kind-list__item-hd_show' : ''}}"
             bindtap="kindToggle">
             <view class="weui-flex__item bold">{{item.name}}
               <text wx:if="{{item.badge>0}}" class="weui-badge">{{item.badge}}</text>
@@ -16,11 +16,11 @@
             <image class="kind-list__img" src="../../static/images/icon_nav_{{item.id}}.svg" style="opacity:60%;">
             </image>
           </view>
-          <view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
+          <view class="kind-list__item-bd {{item.open&&item.sub ? 'kind-list__item-bd_show' : ''}}">
             <view class="weui-cells {{item.open ? 'weui-cells_show' : ''}}">
-              <block wx:for="{{item.pages}}" wx:for-item="page" wx:key="*this">
-                <navigator url="/pages/{{page}}/index" class="weui-cell weui-cell_access">
-                  <view class="weui-cell__bd">{{page}}</view>
+              <block wx:for="{{item.pages}}" wx:for-index="idx" wx:for-item="page" wx:key="idx">
+                <navigator url="/pages/{{page.route}}" class="weui-cell weui-cell_access">
+                  <view class="weui-cell__bd">{{page.name}}</view>
                   <view class="weui-cell__ft weui-cell__ft_in-access"></view>
                 </navigator>
               </block>

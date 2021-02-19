@@ -1,0 +1,50 @@
+/* pages/schedule/index.wxss */
+.weui-panel__bd{
+  margin:80rpx 0rpx;
+}
+.weui-cell-third{
+  background: #fff;
+}
+.weui-cell-list{
+  background: #fff;
+  margin: 20rpx 80rpx;
+}
+.weui-cell-line{
+/* width: 100px; */
+margin-left: 10rpx;
+  border-left: 1px solid #ddd;
+  padding-bottom:25rpx;
+  height: calc(100% + 100rpx); 
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.weui-cell-circle{
+  border: 1px solid var(--weui-BRAND);
+  border-radius: 10rpx;
+  width: 20rpx;
+  height: 20rpx;
+  border-color: var(--weui-BRAND);
+  background-color:var(--weui-BRAND);
+}
+.weui-cell-time{
+  /* width: 50px; */
+  float: left;
+  font-size:30rpx;
+  padding-left: 30rpx;
+  width: 100%;
+  color:var();
+}
+.weui-cell-event{
+  font-size:26rpx;
+  padding-top: 10rpx;
+  padding-left: 30rpx;
+  color:var(--weui-FG-1);
+}
+.weui-cell-name{
+font-size:14px;
+height:23px;
+margin-left: 100px;
+ 
+ 
+}

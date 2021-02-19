@@ -1,0 +1,93 @@
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title bold">通知</view>
+    <view class="page__desc text">未处理通知</view>
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <view class="kind-list">
+      <view class="weui-panel">
+        <view class="weui-panel__hd">未处理通知</view>
+        <view class="weui-panel__bd" wx:for="{{notice}}" wx:key="index" id="{{index}}">
+          <view class="weui-media-box weui-media-box_text" data-idx="{{index}}" bindtap="openProcessDialog">
+            <h4 class="weui-media-box__title">{{item.theme}}</h4>
+            <view class="weui-media-box__desc">
+              <view wx:for="{{item.desc}}" wx:for-index="idx" wx:for-item="itm" wx:key="idx">
+                {{itm}}
+              </view>
+            </view>
+            <view class="weui-media-box__info">
+              <view class="weui-media-box__info__meta">{{item.from}}</view>
+              <view class="weui-media-box__info__meta">{{item.msgTime}}</view>
+              <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{item.extra}}</view>
+
+            </view>
+          </view>
+        </view>
+        <view wx:if="{{notice.length==0}}" style="color:var(--weui-FG-1);text-align:center;padding:40rpx;">
+          没有未处理的通知
+        </view>
+      </view>
+      <view style="width:100%;margin-top:10px;color:var(--weui-FG-1);text-align:center;font-size:0.7em;">—— 到底了 ——
+      </view>
+    </view>
+  </view>
+  <view class="page__ft">
+    <view class="weui-footer">
+      <view class="weui-footer__text text">EasyMeeting 会易 v1.0</view>
+    </view>
+  </view>
+
+
+
+
+  <view class="fadeIn" wx:if="{{processDialog}}">
+    <view class="weui-mask" catchtap="closeProcessDialog"></view>
+    <view class="weui-half-screen-dialog">
+      <view class="weui-half-screen-dialog__hd">
+        <view class="weui-half-screen-dialog__hd__side" catchtap="closeProcessDialog">
+          <a class="weui-icon-btn">返回<i class="weui-icon-back-arrow-thin"></i></a>
+        </view>
+        <view class="weui-half-screen-dialog__hd__main">
+          <strong class="weui-half-screen-dialog__title">{{processDialogData.title}}</strong>
+          <view class="weui-half-screen-dialog__subtitle">{{processDialogData.subTitle}}</view>
+        </view>
+        <!--<view class="weui-half-screen-dialog__hd__side">
+                    <a class="weui-icon-btn">更多<i class="weui-icon-more"></i></a>
+                </view>-->
+      </view>
+      <view class="weui-half-screen-dialog__bd">
+        <view class="weui-half-screen-dialog__desc">
+          请选择回复类型
+        </view>
+
+        <view class="weui-cells weui-cells_radio">
+          <radio-group class="radio-group" bindchange="radioChange">
+            <label class="weui-cell weui-cell_active weui-check__label" wx:for="{{processDialogMovements}}"
+              wx:key="name">
+              <view class="weui-cell__bd">
+                <view>{{item.value}}</view>
+              </view>
+              <view class="weui-cell__ft">
+                <radio class="weui-check" value="{{item.name}}" checked="{{item.checked}}" />
+                <i class="weui-icon-checked"></i>
+              </view>
+            </label>
+          </radio-group>
+          <view class="weui-cell weui-cell_active" wx:if="{{processDialogExt}}">
+            <view class="weui-cell__hd"><label class="weui-label">说明</label></view>
+            <view class="weui-cell__bd">
+              <input class="weui-input" placeholder="填写说明" placeholder-class="weui-input__placeholder" />
+            </view>
+          </view>
+        </view>
+
+      </view>
+      <view class="weui-half-screen-dialog__ft">
+        <a class="weui-btn weui-btn_primary" bindtap="sendReply">发送</a>
+      </view>
+    </view>
+  </view>
+
+
+
+</view>
