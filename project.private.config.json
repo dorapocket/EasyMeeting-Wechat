@@ -51,6 +51,31 @@
         {
           "name": "pages/notice/all",
           "pathName": "pages/notice/all",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/meeting/meetingAdmin",
+          "pathName": "pages/meeting/meetingAdmin",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/admin/meetingRoom/admin",
+          "pathName": "pages/admin/meetingRoom/admin",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/admin/meetingRoom/add",
+          "pathName": "pages/admin/meetingRoom/add",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/meeting/add",
+          "pathName": "pages/meeting/add",
+          "query": "",
           "scene": null
         }
       ]

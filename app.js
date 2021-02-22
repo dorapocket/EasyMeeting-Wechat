@@ -1,6 +1,12 @@
+const Request = require("./utils/request");
+
 // app.js
 App({
   onLaunch() {
+    let cfg=require("./config");
+    wx.setStorageSync('token', cfg.test_token);
+    let Request=require("./utils/request");
+    this.$request=new Request(cfg.server_ip,cfg.test_token);
     // 下载字体
     /*wx.loadFontFace({
       global:true,
@@ -56,5 +62,5 @@ App({
   },
   globalData: {
     userInfo: null
-  }
+  },
 })

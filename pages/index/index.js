@@ -1,14 +1,18 @@
+let cfg=require("../../config");
 Page({
     data: {
         list: [{
                 id: 'createMeeting',
-                name: '新建会议',
+                name: '会议',
                 open: false,
-                sub: false,
+                sub: true,
                 badge: 0,
                 pages: [{
-                    route: 'createMeeting/index',
+                    route: 'meeting/add',
                     name: '新建会议'
+                },{
+                    route: 'meeting/meetingAdmin',
+                    name: '我发出的会议'
                 }],
             },
             {
@@ -43,11 +47,8 @@ Page({
                 open: false,
                 badge: 0,
                 pages: [{
-                    route: 'admin/meetingRoom',
+                    route: 'admin/meetingRoom/admin',
                     name: '会议室管理'
-                },{
-                    route: 'admin/meetingAdmin',
-                    name: '我发出的会议'
                 }]
             },
             {
@@ -86,5 +87,12 @@ Page({
     changeTheme: function () {
         console.log(this.data);
         getApp().themeChanged(this.data.theme === 'light' ? 'dark' : 'light');
+    },
+    onShow:function(){
+        console.log(cfg.server_ip);
+    },
+    onLoad (query) {
+        // scene 需要使用 decodeURIComponent 才能获取到生成二维码时传入的 scene
+        const scene = decodeURIComponent(query.scene);
     }
 });

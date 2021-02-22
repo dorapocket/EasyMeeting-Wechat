@@ -12,7 +12,7 @@
               <view class='weui-cell-circle'></view>
               <view class='weui-cell-line'>
                 <view class='weui-cell-time'>{{item.time}}</view>
-                <view class='weui-cell-event' wx:for="{{item.desc}}" wx:for-item="desc">
+                <view class='weui-cell-event' wx:for="{{item.desc}}" wx:for-item="desc" wx:key="index">
                   <view>{{desc}}</view>
                 </view>
               </view>

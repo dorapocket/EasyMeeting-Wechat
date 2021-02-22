@@ -2,15 +2,16 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/scanLogin/index",
-    "pages/scanLogin/success",
-    "pages/createMeeting/index",
-    "pages/scanLogin/wait",
+    "pages/login/scanLogin/index",
+    "pages/login/scanLogin/success",
+    "pages/login/scanLogin/wait",
+    "pages/meeting/add",
+    "pages/meeting/meetingAdmin",
     "pages/notice/index",
     "pages/notice/all",
     "pages/schedule/index",
-    "pages/admin/meetingRoom",
-    "pages/admin/meetingAdmin"
+    "pages/admin/meetingRoom/admin",
+    "pages/admin/meetingRoom/add"
   ],
   "entryPagePath": "pages/index/index",
   "window": {

@@ -1,4 +1,4 @@
-// pages/admin/meetingRoom.js
+// pages/admin/meetingRoom/add.js
 Page({
 
   /**
@@ -7,7 +7,16 @@ Page({
   data: {
 
   },
-
+  createMeetingRoom:function(){
+    wx.navigateBack({
+      delta: 1
+    });
+    wx.showToast({
+      title: '创建成功',
+      icon: 'success', // error
+      duration: 2000
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
