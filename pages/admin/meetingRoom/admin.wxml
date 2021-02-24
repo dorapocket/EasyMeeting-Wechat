@@ -9,7 +9,7 @@
       <view class="weui-panel">
         <view class="weui-panel__hd">我的会议室</view>
         <view class="weui-panel__bd" wx:for="{{meetingRoomList}}" wx:key="index" id="{{index}}">
-          <view class="weui-media-box weui-media-box_text" data-idx="{{index}}" bindtap="openActionSheet">
+          <view class="weui-media-box weui-media-box_text" data-mid="{{item.mid}}" data-index="{{index}}" bindtap="openActionSheet">
             <h4 class="weui-media-box__title">{{item.name}}</h4>
             <view class="weui-media-box__desc" style="overflow:inherit;height:auto;">
               <view wx:for="{{item.desc}}" wx:for-index="idx" wx:for-item="itm" wx:key="idx">

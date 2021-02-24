@@ -8,14 +8,14 @@
       </view>
       <view class="weui-msg__custom-area">
 				<view class="weui-form-preview__list">
-					<view class="weui-form-preview__item"><label class="weui-form-preview__label">用户名</label><view class="weui-form-preview__value">Dorapocket</view></view>
-					<view class="weui-form-preview__item"><label class="weui-form-preview__label">会易账户</label><view class="weui-form-preview__value">李国宇</view></view>
+					<view class="weui-form-preview__item"><label class="weui-form-preview__label">用户名</label><view class="weui-form-preview__value">{{username}}</view></view>
 				</view>
 			</view>
 		</view>
 		<view class="weui-msg__opr-area">
 			<view class="weui-btn-area">
-				<a href="javascript:history.back();" class="weui-btn weui-btn_primary">返回主页</a>
+				<a  class="weui-btn weui-btn_primary"><navigator url="/pages/index/index">返回主页</navigator></a>
+				
 			</view>
 		</view>
 		

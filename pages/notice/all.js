@@ -5,22 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    notice: [{
-        msgId: 1001,
-        theme: '股东大会',
-        desc: ['地点：大会议室（6教北101)', '时间：2020年2月19日 13：00-14：00'],
-        from: '李国宇',
-        msgTime: '2020年2月4日 10:22',
-        extra: '已接受',
-      },
-      {
-        msgId: 2001,
-        theme: '股东小会',
-        desc: ['地点：大会议室（6教北101)', '时间：2020年2月19日 13：00-14：00'],
-        from: '李国宇',
-        msgTime: '2020年2月4日 10:22',
-        extra: '已拒绝',
-      }
+    notice: [
     ],
     processDialog: false,
     processDialogData: {
@@ -61,7 +46,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let app=getApp();
+    app.$track.tarckPage('pages/notice/all');
   },
 
   /**

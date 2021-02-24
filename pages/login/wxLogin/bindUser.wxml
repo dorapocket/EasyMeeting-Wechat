@@ -1,0 +1,54 @@
+<!--pages/login/wxLogin/bindUser.wxml-->
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title bold">登录</view>
+    <view class="page__desc text">会易账户绑定</view>
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <view class="kind-list">
+      <view class="weui-panel">
+        <view class="weui-panel__bd">
+          <view class="weui-form__control-area" style="margin-bottom:20px;">
+            <view class="weui-cells__group weui-cells__group_form">
+              <view class="weui-cells__title">会易账户登录</view>
+              <view class="weui-cells weui-cells_form">
+                <view class="weui-cell weui-cell_active">
+                  <view class="weui-cell__hd"><label class="weui-label">用户名</label></view>
+                  <view class="weui-cell__bd">
+                    <input class="weui-input" bindinput="usernameChange" placeholder="用户名/邮箱/手机" placeholder-class="weui-input__placeholder" />
+                  </view>
+                </view>
+                <view class="weui-cell weui-cell_active">
+                  <view class="weui-cell__hd">
+                    <label class="weui-label">密码</label>
+                  </view>
+                  <view class="weui-cell__bd">
+                    <input class="weui-input" bindinput="passwordChange" placeholder="密码" password placeholder-class="weui-input__placeholder" />
+                  </view>
+                </view>
+
+              </view>
+
+            </view>
+          </view>
+          <view class="weui-form__opr-area"  style="margin-bottom:20px;">
+			<a class="weui-btn weui-btn_primary" bindtap="loginAndBind">登录并绑定</a>
+    </view>
+    <view class="weui-form__tips-area">
+			<view class="weui-form__tips">
+                <a>没有账号？立即注册</a>
+			</view>
+		</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="page__ft">
+    <view class="weui-footer">
+      
+      <view class="weui-footer__text text">EasyMeeting 会易 v1.0</view>
+    </view>
+  </view>
+
+
+</view>

@@ -4,14 +4,15 @@
     "pages/logs/logs",
     "pages/login/scanLogin/index",
     "pages/login/scanLogin/success",
-    "pages/login/scanLogin/wait",
     "pages/meeting/add",
     "pages/meeting/meetingAdmin",
     "pages/notice/index",
     "pages/notice/all",
     "pages/schedule/index",
     "pages/admin/meetingRoom/admin",
-    "pages/admin/meetingRoom/add"
+    "pages/admin/meetingRoom/add",
+    "pages/login/wxLogin/wxLogin",
+    "pages/login/wxLogin/bindUser"
   ],
   "entryPagePath": "pages/index/index",
   "window": {

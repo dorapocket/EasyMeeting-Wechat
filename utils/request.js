@@ -1,7 +1,7 @@
 function Request(baseUrl,token){
   this.url=baseUrl;
   this.token=token;
-  this.noAuth=['/','/user/login',''];
+  this.noAuth=['/','/user/login','/wechat/mplogin'];
   this.setToken=function(token){
     this.token=token;
     return;
@@ -15,7 +15,7 @@ function Request(baseUrl,token){
     let header={};
     if(this.noAuth.indexOf(api)==-1){
       header={
-        'Authorization':token,
+        'Authorization':this.token,
       };
     };
     wx.request({
@@ -31,6 +31,12 @@ function Request(baseUrl,token){
           cbs(...args);
         }
         if(args[0]&&args[0].data&&args[0].data.msg&&args[0].data.code!=200){
+          if(args[0].data.code==401){
+            //未登录
+            wx.redirectTo({
+              url: '/pages/login/wxLogin/wxLogin',
+            })
+          }
           wx.showToast({
             title: args[0].data.msg,
             icon: 'none',
@@ -69,7 +75,7 @@ function Request(baseUrl,token){
     let header={};
     if(this.noAuth.indexOf(api)==-1){
       header={
-        'Authorization':token,
+        'Authorization':this.token,
       };
     };
     wx.request({

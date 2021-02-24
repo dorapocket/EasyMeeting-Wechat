@@ -1,0 +1,26 @@
+<!--pages/login/wxLogin/wxLogin.wxml-->
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title bold">登录</view>
+    <view class="page__desc text">微信授权登录</view>
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <view class="kind-list">
+      <view class="weui-panel">
+        <view class="weui-panel__bd">
+
+          <view class="login-padding">
+            <a bindtap="login" class="{{btnLoading?'weui-btn weui-btn_primary weui-btn_loading':'weui-btn weui-btn_primary'}}"><text class="{{btnLoading?'weui-primary-loading weui-primary-loading_transparent':''}}"><i class="weui-primary-loading__dot"  wx:if="{{btnLoading}}"></i></text>微信登录</a>
+          </view>
+        </view>
+      </view>
+    </view> 
+  </view>
+  <view class="page__ft">
+    <view class="weui-footer">
+      <view class="weui-footer__text text">EasyMeeting 会易 v1.0</view>
+    </view>
+  </view>
+
+
+</view>

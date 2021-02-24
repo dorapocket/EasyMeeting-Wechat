@@ -10,13 +10,15 @@ Page({
   },
 openActionSheet:function(e){
   let that=this;
+  let app=getApp();
+  
   wx.showActionSheet({
     itemList: ['删除'],
     success (res) {
       let aid = e.currentTarget.dataset.idx;
       let index =  e.currentTarget.dataset.index
       if(res.tapIndex==0){
-        let app=getApp();
+        app.$track.trackAction('ActionSheet','Click','deleteMeeting');
         app.$request.get('/meetings/deleteMeeting',{
           aid
         },{
@@ -58,6 +60,8 @@ openActionSheet:function(e){
    */
   onShow: function () {
     this.getMeetingData();
+    let app=getApp();
+    app.$track.tarckPage('pages/meeting/meetingAdmin');
   },
   getMeetingData(){
     let that=this;
@@ -70,7 +74,7 @@ openActionSheet:function(e){
           for(let data of res.data.data){
             temp.push({
               aid: data.aid,
-              theme: data.mname,
+              theme: data.theme,
               desc: ['地点：'+data.mname+'（'+data.mpos+')', '时间：'+utils.formatTime("YYYY年mm月dd日 HH:MM",new Date(data.time_begin))+'-'+utils.formatTime("HH:MM",new Date(data.time_end))],
               from: '我自己',
               msgTime: utils.formatTime("YYYY年mm月dd日 HH:MM",new Date(data.create_time)),

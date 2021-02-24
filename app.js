@@ -1,14 +1,13 @@
-const Request = require("./utils/request");
-
 // app.js
 App({
   onLaunch() {
     let cfg=require("./config");
-    wx.setStorageSync('token', cfg.test_token);
     let Request=require("./utils/request");
-    this.$request=new Request(cfg.server_ip,cfg.test_token);
+    const Track = require("./utils/track");
+    this.$track=new Track(cfg.track_ip,3,-1);
+    this.$request=new Request(cfg.server_ip,'');
     // 下载字体
-    /*wx.loadFontFace({
+    wx.loadFontFace({
       global:true,
       family:"HanYiQiHei-55S",
       source:"https://static.cdn.easymeeting.lgyserver.top/static/fonts/hy-55s.ttf",
@@ -27,40 +26,51 @@ App({
       global:true,
       family:"Myriadpro Regular",
       source:"https://static.cdn.easymeeting.lgyserver.top/static/fonts/myriadpro-regular.ttf",
-    });*/
+    });
     // 展示本地存储能力
-    const logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
     // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
-
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
+    try{
+      var value = wx.getStorageSync('token') || '';
+    }catch(e){
+      console.log(e);
+    }
+      let that=this;
+      if (value&&value!='') {
+        this.$request.setToken(value);
+        this.$request.get('/user/validToken',{},{
+          success:function(res){
+            if(res.data.code==200){
+              that.$request.setToken(res.data.data.token);
+              wx.setStorageSync('token', res.data.data.token);
+              that.globalData.token=res.data.data.token;
+              that.getUserInfo();
+            }else{
+              wx.redirectTo({
+                url: '/pages/login/wxLogin/wxLogin',
+              })
             }
-          })
+          }
+        });
+        this.globalData.token=value;
+      }else{
+        wx.redirectTo({
+          url: '/pages/login/wxLogin/wxLogin',
+        })
+      }
+  },
+  getUserInfo:function(){
+    let app=getApp();
+    app.$request.get('/user/userInfo',{},{
+      success:function(res){
+        if(res.data.code==200){
+          wx.setStorageSync('userInfo', res.data.data);
+          app.$track.setUid(res.data.data.uid);
         }
       }
-    })
+    });
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    token:''
   },
 })

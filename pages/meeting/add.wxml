@@ -12,7 +12,7 @@
           <view class="weui-cell weui-cell_active">
             <view class="weui-cell__hd"><label class="weui-label">会议主题</label></view>
             <view class="weui-cell__bd">
-              <input class="weui-input" placeholder="李国宇发起的会议" placeholder-class="weui-input__placeholder"
+              <input class="weui-input" placeholder="我发起的会议" placeholder-class="weui-input__placeholder"
                 bindinput="setTheme" />
             </view>
           </view>

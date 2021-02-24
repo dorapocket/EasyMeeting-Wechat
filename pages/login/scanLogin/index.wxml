@@ -5,14 +5,13 @@
   </view>
   <view class="page__bd page__bd_spacing">
     <view class="weui-flex" style="flex-direction:column;">
-      <image src="../../static/images/pc.svg" alt="pc" style="width:auto;"></image>
+      <image src="../../../static/images/pc.svg" alt="pc" style="width:auto;"></image>
       <view class="weu i-flex__item text-center">
-        <view class="text-center text">是否允许来自 浙江省宁波市 的登录请求？</view>
-        <view class="text-center text">IP：39.186.*.*</view>
+        <view class="text-center text">是否允许来自 {{from}} 的登录请求？</view>
+        <view class="text-center text">IP：{{ip}}</view>
       </view>
-      <a style="margin-top:150rpx;" class="weui-btn weui-btn_primary"><navigator url="/pages/scanLogin/success" >登录成功页</navigator></a>
-      <a class="weui-btn weui-btn_primary"><navigator url="/pages/scanLogin/wait" >登陆页面2</navigator></a>
-      <a class="weui-btn weui-btn_default">取消</a>
+      <a style="margin-top:150rpx;" class="weui-btn weui-btn_primary" bindtap="loginConfirm">允许</a>
+      <a class="weui-btn weui-btn_default" bindtap="cancel">取消</a>
     </view>
 
 

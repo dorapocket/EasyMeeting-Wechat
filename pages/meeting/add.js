@@ -138,7 +138,7 @@ bindEndTimeChange(e){
           meetingRooms:rooms,
           meetingRoomsData:res.data.data
         });
-      }
+      },loadText:'加载中'
     });
     app.$request.get('/meetings/getAllUsers',{},{
       success:function(res){
@@ -153,10 +153,12 @@ bindEndTimeChange(e){
         that.setData({
           members:users
         });
-      }
+      },
     });
   },
   submit(){
+    let app=getApp();
+    app.$track.trackAction('Button','Click','submitMeetingCreate');
     wx.showLoading({
       title: '创建中',
     });
@@ -167,7 +169,6 @@ bindEndTimeChange(e){
     let time_end=new Date(this.data.date+' '+this.data.timeEnd).valueOf();
     let member=JSON.stringify(this.data.membersSelected);
     let remark=this.data.commit;
-    let app=getApp();
     app.$request.post('/meetings/createMeeting',{
       theme,mid,date,time_begin,time_end,member,remark
     },{
@@ -203,7 +204,8 @@ bindEndTimeChange(e){
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let app=getApp();
+    app.$track.tarckPage('pages/meeting/add');
   },
 
   /**

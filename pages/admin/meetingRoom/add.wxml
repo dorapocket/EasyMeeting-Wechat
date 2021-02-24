@@ -13,19 +13,19 @@
           <view class="weui-cell weui-cell_active">
             <view class="weui-cell__hd"><label class="weui-label">名称</label></view>
             <view class="weui-cell__bd">
-              <input class="weui-input" placeholder="默认会议室" placeholder-class="weui-input__placeholder" />
+              <input class="weui-input" placeholder="默认会议室" bindinput="onNameChange" placeholder-class="weui-input__placeholder" />
             </view>
           </view>
           <view class="weui-cell weui-cell_active">
             <view class="weui-cell__hd"><label class="weui-label">地点</label></view>
             <view class="weui-cell__bd">
-              <input class="weui-input" placeholder="xxx楼xxx层xxx" placeholder-class="weui-input__placeholder" />
+              <input class="weui-input" placeholder="xxx楼xxx层xxx" bindinput="onPosChange" placeholder-class="weui-input__placeholder" />
             </view>
           </view>
           <view class="weui-cell weui-cell_active">
             <view class="weui-cell__hd"><label class="weui-label">容纳人数</label></view>
             <view class="weui-cell__bd">
-              <input class="weui-input" placeholder="5" placeholder-class="weui-input__placeholder" />
+              <input class="weui-input" type="number" placeholder="5" bindinput="onMaxpeopleChange" placeholder-class="weui-input__placeholder" />
             </view>
           </view>
         </view>
@@ -37,7 +37,7 @@
           <view class="weui-cell weui-cell_active">
             <view class="weui-cell__hd"><label class="weui-label">设施</label></view>
             <view class="weui-cell__bd">
-              <input class="weui-input" placeholder="白板、投影" placeholder-class="weui-input__placeholder" />
+              <input class="weui-input" placeholder="白板、投影" bindinput="onDescChange" placeholder-class="weui-input__placeholder" />
             </view>
           </view>
           <!--

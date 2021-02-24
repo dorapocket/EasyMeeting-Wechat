@@ -1,0 +1,8 @@
+/* pages/login/wxLogin/wxLogin.wxss */
+.page{
+  height: 100%;
+}
+.login-padding{
+  display: block;
+  margin:100rpx;
+}

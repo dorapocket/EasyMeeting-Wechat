@@ -50,14 +50,6 @@ Page({
                     route: 'admin/meetingRoom/admin',
                     name: '会议室管理'
                 }]
-            },
-            {
-                id: 'my',
-                name: '我的',
-                sub: false,
-                open: false,
-                badge: 0,
-                pages: []
             }
         ]
     },
@@ -89,10 +81,10 @@ Page({
         getApp().themeChanged(this.data.theme === 'light' ? 'dark' : 'light');
     },
     onShow:function(){
-        console.log(cfg.server_ip);
+        let app=getApp();
+app.$track.tarckPage('pages/index/index');
     },
     onLoad (query) {
-        // scene 需要使用 decodeURIComponent 才能获取到生成二维码时传入的 scene
-        const scene = decodeURIComponent(query.scene);
+        
     }
 });

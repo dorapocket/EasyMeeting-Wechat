@@ -9,7 +9,7 @@ Page({
         msgId: 1001,
         theme: '股东大会',
         desc: ['地点：大会议室（6教北101)', '时间：2020年2月19日 13：00-14：00'],
-        from: '李国宇',
+        from: 'xxx',
         msgTime: '2020年2月4日 10:22',
         extra: '',
       },
@@ -17,7 +17,7 @@ Page({
         msgId: 2001,
         theme: '股东小会',
         desc: ['地点：大会议室（6教北101)', '时间：2020年2月19日 13：00-14：00'],
-        from: '李国宇',
+        from: 'xxx',
         msgTime: '2020年2月4日 10:22',
         extra: '',
       }
@@ -84,6 +84,8 @@ Page({
     });
   },
   openProcessDialog: function (e) {
+    let app=getApp();
+    app.$track.trackAction('Button','Click','dealNotice');
     let index = e.currentTarget.dataset.idx;
     this.setData({
       processDialogData: {
@@ -111,7 +113,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let app=getApp();
+    app.$track.tarckPage('pages/notice/index');
   },
 
   /**

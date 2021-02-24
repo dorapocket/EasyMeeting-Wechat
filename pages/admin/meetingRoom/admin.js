@@ -5,24 +5,37 @@ Page({
    * 页面的初始数据
    */
   data: {
-    meetingRoomList:[{
-      name:'大会议室',
-      desc:['地点：六教北110','设备：黑板、投影'],
-      maxpeople:50
-    },{
-      name:'小会议室',
-      desc:['地点：六教北111','设备：投影'],
-      maxpeople:5
-    },],
+    meetingRoomList:[],
   },
-  openActionSheet:function(){
+  openActionSheet:function(event){
+    let that=this;
+    let app=getApp();
     wx.showActionSheet({
       itemList: ['删除'],
       success (res) {
-        console.log(res.tapIndex)
-      },
-      fail (res) {
-        console.log(res.errMsg)
+        app.$track.trackAction('ActionSheet','Click','deleteMeetingRoom');
+        if(res.tapIndex==0&&event.currentTarget.dataset.mid){
+          app.$request.get('/meetings/deleteMeetingRoom',{
+            mid:event.currentTarget.dataset.mid
+          },{
+            success:function(res){
+              if(res.data.code==200){
+                let idx=event.currentTarget.dataset.index;
+                let temp=that.data.meetingRoomList;
+                temp.splice(idx,1);
+                that.setData({
+                  meetingRoomList:temp
+                });
+                wx.showToast({
+                  title: '删除成功',
+                  icon:'success',
+                  duration:2000
+                })
+              }
+            },loadText:'删除中'
+          });
+          
+        }
       }
     })
   },
@@ -30,7 +43,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**
@@ -44,7 +57,28 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let app=getApp();
+app.$track.tarckPage('pages/admin/meetingRoom/admin');
+    let that=this;
+    app.$request.get('/meetings/getMeetingRoomList',{},{
+      success:function(res){
+        if(res.data.code==200){
+          let temp=[];
+          for(let room of res.data.data){
+            temp.push({
+              mid:room.mid,
+              name:room.name,
+              maxpeople:room.max_people,
+              desc:['地点:'+room.position,'设备:'+room.description]
+            });
+          }
+          that.setData({
+            meetingRoomList:temp
+          });
+        }
+      },
+      loadText:'加载中'
+    });
   },
 
   /**

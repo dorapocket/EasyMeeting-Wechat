@@ -13,8 +13,8 @@
     "miniprogram": {
       "list": [
         {
-          "name": "pages/scanLogin/index",
-          "pathName": "pages/scanLogin/index",
+          "name": "pages/login/scanLogin/index",
+          "pathName": "pages/login/scanLogin/index",
           "query": "",
           "scene": null
         },
@@ -76,6 +76,36 @@
           "name": "pages/meeting/add",
           "pathName": "pages/meeting/add",
           "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/schedule/index",
+          "pathName": "pages/schedule/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/login/wxLogin/wxLogin",
+          "pathName": "pages/login/wxLogin/wxLogin",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/login/wxLogin/bindUser",
+          "pathName": "pages/login/wxLogin/bindUser",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/login/scanLogin/index",
+          "pathName": "pages/login/scanLogin/index",
+          "query": "scene=ab8758712aa5367b",
+          "scene": null
+        },
+        {
+          "name": "pages/login/scanLogin/success",
+          "pathName": "pages/login/scanLogin/success",
+          "query": "scene=loginToken%3D6cc8d5f5b2ea4fbf",
           "scene": null
         }
       ]
