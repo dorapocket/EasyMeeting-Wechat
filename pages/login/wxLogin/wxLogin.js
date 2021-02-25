@@ -48,7 +48,7 @@ Page({
                   url: '/pages/index/index',
                 });
                 wx.showToast({
-                  title: '登陆成功',
+                  title: '登录成功',
                   icon:"success"
                 });
               }else if(res.data.code==202){

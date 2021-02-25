@@ -165,8 +165,8 @@ bindEndTimeChange(e){
     let theme=this.data.theme;
     let mid=this.data.meetingRoomsData[this.data.meetingRoomIndex].mid;
     let date=this.data.date;
-    let time_begin=new Date(this.data.date+' '+this.data.timeBegin).valueOf();
-    let time_end=new Date(this.data.date+' '+this.data.timeEnd).valueOf();
+    let time_begin=new Date(this.data.date.replace(/-/g,'/')+' '+this.data.timeBegin).valueOf(); // 模拟器测不出来，ios必须要/分割 否则会null
+    let time_end=new Date(this.data.date.replace(/-/g,'/')+' '+this.data.timeEnd).valueOf();
     let member=JSON.stringify(this.data.membersSelected);
     let remark=this.data.commit;
     app.$request.post('/meetings/createMeeting',{

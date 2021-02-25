@@ -43,7 +43,7 @@ Page({
                   url: '/pages/index/index',
                 });
                 wx.showToast({
-                  title: '登陆成功',
+                  title: '登录成功',
                   icon:"success"
                 })
               }
@@ -55,7 +55,7 @@ Page({
       },
       fail:function(){
         wx.showToast({
-          title: '自动登陆失败，请稍后重试',
+          title: '自动登录失败，请稍后重试',
           icon:"none"
         })
       }
