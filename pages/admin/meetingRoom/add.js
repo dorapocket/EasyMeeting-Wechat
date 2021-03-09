@@ -75,7 +75,7 @@ Page({
    */
   onShow: function () {
 let app=getApp();
-app.$track.tarckPage('pages/admin/meetingRoom/add');
+app.$track.trackPage('pages/admin/meetingRoom/add');
   },
 
   /**

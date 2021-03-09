@@ -83,7 +83,7 @@ Page({
    */
   onShow: function () {
     let app=getApp();
-    app.$track.tarckPage('pages/login/wxLogin/wxLogin');
+    app.$track.trackPage('pages/login/wxLogin/wxLogin');
   },
 
   /**

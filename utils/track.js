@@ -1,4 +1,4 @@
-function Track(url,siteid,userid=-1){
+function Track(url,siteid,userid=-1,track_enable=false){
   this.TRACK_URL=url+'/matomo.php';
   this.SITE_ID=siteid;
   this.USER_ID=userid;
@@ -15,6 +15,7 @@ function Track(url,siteid,userid=-1){
     };
   }
   this.sendTrack=function(obj){
+    if(track_enable){
     Object.assign(obj,this.basicConfig());
     wx.request({
       url: this.TRACK_URL,
@@ -22,7 +23,8 @@ function Track(url,siteid,userid=-1){
       data:obj
     });
   }
-  this.tarckPage=function(pageUrl){
+  }
+  this.trackPage=function(pageUrl){
     this.sendTrack({
       action_name:pageUrl,
       url:pageUrl,

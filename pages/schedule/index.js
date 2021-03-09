@@ -47,7 +47,7 @@ Page({
    */
   onShow: function () {
     let app=getApp();
-    app.$track.tarckPage('pages/schedule/index');
+    app.$track.trackPage('pages/schedule/index');
   },
 
   /**

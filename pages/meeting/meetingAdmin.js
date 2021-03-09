@@ -61,7 +61,7 @@ openActionSheet:function(e){
   onShow: function () {
     this.getMeetingData();
     let app=getApp();
-    app.$track.tarckPage('pages/meeting/meetingAdmin');
+    app.$track.trackPage('pages/meeting/meetingAdmin');
   },
   getMeetingData(){
     let that=this;

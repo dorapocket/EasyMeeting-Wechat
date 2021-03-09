@@ -52,7 +52,7 @@ function Request(baseUrl,token){
         }
           wx.showToast({
             title: '网络错误',
-            icon: 'error',
+            icon: 'none',
             duration: 2000
           })
       },
@@ -106,7 +106,7 @@ function Request(baseUrl,token){
         }
           wx.showToast({
             title: '网络错误',
-            icon: 'error',
+            icon: "none",
             duration: 2000
           })
       },

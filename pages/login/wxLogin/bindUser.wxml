@@ -36,7 +36,7 @@
     </view>
     <view class="weui-form__tips-area">
 			<view class="weui-form__tips">
-                <a>没有账号？立即注册</a>
+                <a bindtap="regNow">没有账号？立即注册</a>
 			</view>
 		</view>
         </view>

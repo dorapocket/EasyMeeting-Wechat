@@ -205,7 +205,7 @@ bindEndTimeChange(e){
    */
   onShow: function () {
     let app=getApp();
-    app.$track.tarckPage('pages/meeting/add');
+    app.$track.trackPage('pages/meeting/add');
   },
 
   /**

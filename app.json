@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
     "pages/login/scanLogin/index",
     "pages/login/scanLogin/success",
     "pages/meeting/add",
@@ -12,7 +11,9 @@
     "pages/admin/meetingRoom/admin",
     "pages/admin/meetingRoom/add",
     "pages/login/wxLogin/wxLogin",
-    "pages/login/wxLogin/bindUser"
+    "pages/login/wxLogin/bindUser",
+    "pages/admin/device/add",
+    "pages/login/register/index"
   ],
   "entryPagePath": "pages/index/index",
   "window": {

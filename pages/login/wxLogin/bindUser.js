@@ -71,6 +71,11 @@ Page({
       password:event.detail.value
     });
   },
+  regNow:function(){
+    wx.reLaunch({
+      url: '/pages/login/register/index',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -90,7 +95,7 @@ Page({
    */
   onShow: function () {
     let app=getApp();
-    app.$track.tarckPage('pages/login/wxLogin/bindUser');
+    app.$track.trackPage('pages/login/wxLogin/bindUser');
   },
 
   /**

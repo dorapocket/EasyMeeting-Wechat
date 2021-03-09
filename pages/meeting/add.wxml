@@ -78,7 +78,7 @@
 
               <a class="weui-select" bindtap="openSelectPeopleDialog">{{membersSelectedText}}</a>
             </view>
-          </view>
+          </view><!--
           <view class="weui-cell weui-cell_active weui-cell_switch">
             <view class="weui-cell__bd">向参会人发送通知</view>
             <view class="weui-cell__ft">
@@ -87,7 +87,7 @@
                 <view class="weui-switch-cp__box"></view>
               </label>
             </view>
-          </view>
+          </view>-->
         </view>
       </view>
       <view class="weui-cells__group weui-cells__group_form">

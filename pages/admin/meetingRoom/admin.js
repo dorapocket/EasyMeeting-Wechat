@@ -58,7 +58,7 @@ Page({
    */
   onShow: function () {
     let app=getApp();
-app.$track.tarckPage('pages/admin/meetingRoom/admin');
+app.$track.trackPage('pages/admin/meetingRoom/admin');
     let that=this;
     app.$request.get('/meetings/getMeetingRoomList',{},{
       success:function(res){

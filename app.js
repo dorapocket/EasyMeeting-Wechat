@@ -4,9 +4,10 @@ App({
     let cfg=require("./config");
     let Request=require("./utils/request");
     const Track = require("./utils/track");
-    this.$track=new Track(cfg.track_ip,3,-1);
+    this.$track=new Track(cfg.track_ip,3,-1,cfg.track_enable);
     this.$request=new Request(cfg.server_ip,'');
     // 下载字体
+    /*
     wx.loadFontFace({
       global:true,
       family:"HanYiQiHei-55S",
@@ -26,7 +27,7 @@ App({
       global:true,
       family:"Myriadpro Regular",
       source:"https://static.cdn.easymeeting.lgyserver.top/static/fonts/myriadpro-regular.ttf",
-    });
+    });*/
     // 展示本地存储能力
     // 登录
     try{

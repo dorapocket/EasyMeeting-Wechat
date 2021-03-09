@@ -26,7 +26,7 @@ Page({
                     name: '未处理的通知'
                 }, {
                     route: 'notice/all',
-                    name: '所有通知'
+                    name: '历史通知'
                 }],
             },
             {
@@ -49,7 +49,11 @@ Page({
                 pages: [{
                     route: 'admin/meetingRoom/admin',
                     name: '会议室管理'
-                }]
+                }/*,
+                {
+                    route: 'admin/device/add',
+                    name: '会议室设备管理'
+                }*/]
             }
         ]
     },
@@ -82,7 +86,7 @@ Page({
     },
     onShow:function(){
         let app=getApp();
-app.$track.tarckPage('pages/index/index');
+app.$track.trackPage('pages/index/index');
     },
     onLoad (query) {
         
