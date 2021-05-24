@@ -1,0 +1,35 @@
+<!--pages/device/checkin/index.wxml-->
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title bold">会议室抢占</view>
+    <view class="page__desc text">抢占已预约的会议室</view>
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <view class="kind-list">
+      <view class="weui-panel">
+        <view class="weui-panel__bd">
+
+          <view class="login-padding">
+            <view  style="color:var(--weui-FG-1);text-align:center;padding:40rpx;">
+          {{msg}}
+        </view>
+        <view  wx:if="{{currentMeeting.theme}}" style="color:var(--weui-FG-2);text-align:center;padding:20rpx;margin-bottom:20px">
+          <view>已预约的会议：{{currentMeeting.theme}}</view>
+            <view>预约人：{{currentMeeting.sponsor}}</view>
+              <view>预约时间：{{currentMeeting.time}}</view>
+        </view>
+            <a bindtap="gotoCheckin" wx:if="{{checkinBtn}}" class="{{btnLoading?'weui-btn weui-btn_primary weui-btn_loading':'weui-btn weui-btn_primary'}}"><text class="{{btnLoading?'weui-primary-loading weui-primary-loading_transparent':''}}"><i class="weui-primary-loading__dot"  wx:if="{{btnLoading}}"></i></text>立即签到</a>
+            <a bindtap="doGrab" wx:if="{{grabBtn}}" class="{{btnLoading?'weui-btn weui-btn_primary weui-btn_loading':'weui-btn weui-btn_primary'}}"><text class="{{btnLoading?'weui-primary-loading weui-primary-loading_transparent':''}}"><i class="weui-primary-loading__dot"  wx:if="{{btnLoading}}"></i></text>立即抢占</a>
+          </view>
+        </view>
+      </view>
+    </view> 
+  </view>
+  <view class="page__ft">
+    <view class="weui-footer">
+      <view class="weui-footer__text text">EasyMeeting 会易 v1.0</view>
+    </view>
+  </view>
+
+
+</view>

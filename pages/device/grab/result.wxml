@@ -1,0 +1,32 @@
+<view class="page">
+	<view class="weui-msg">
+		<view class="weui-msg__icon-area"><i class="weui-icon-{{done?'success':'warn'}} weui-icon_msg"></i></view>
+		<view class="weui-msg__text-area">
+			<h2 class="weui-msg__title">{{msg}}</h2>
+			<view class="weui-msg__desc">
+        
+      </view>
+      <view class="weui-msg__custom-area">
+				<view class="weui-form-preview__list">
+          <view class="weui-form-preview__item"><label class="weui-form-preview__label">解锁时段</label><view class="weui-form-preview__value">{{time}}</view></view>
+					<view class="weui-form-preview__item"><label class="weui-form-preview__label">提示信息</label><view class="weui-form-preview__value">{{extraMsg}}</view></view>
+          
+				</view>
+			</view>
+		</view>
+		<view class="weui-msg__opr-area">
+			<view class="weui-btn-area">
+        <a class="weui-btn weui-btn_default" bindtap="nvback">返回上级</a>
+				<a  class="weui-btn weui-btn_primary"><navigator url="/pages/index/index">返回主页</navigator></a>
+				
+			</view>
+		</view>
+		
+		<view class="weui-msg__extra-area">
+			<view class="weui-footer">
+
+				<view class="weui-footer__text">EasyMeeting 会易 v1.0</view>
+			</view>
+		</view>
+	</view>
+</view>

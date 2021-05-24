@@ -13,7 +13,11 @@
     "pages/login/wxLogin/wxLogin",
     "pages/login/wxLogin/bindUser",
     "pages/admin/device/add",
-    "pages/login/register/index"
+    "pages/login/register/index",
+    "pages/device/index",
+    "pages/device/checkin/index",
+    "pages/device/grab/index",
+    "pages/device/grab/result"
   ],
   "entryPagePath": "pages/index/index",
   "window": {

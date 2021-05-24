@@ -27,7 +27,11 @@
         <view wx:if="{{meetings.length==0}}" style="color:var(--weui-FG-1);text-align:center;padding:40rpx;">
           没有会议
         </view>
-    
+        <navigator url="/pages/meeting/add">
+<a class="weui-btn_cell weui-btn_cell-primary">
+				<image class="weui-btn_cell__icon" style="opacity:50%" src="/static/images/icon_nav_createMeeting.svg"></image>
+新建会议
+			</a></navigator>
       </view>
       <view style="width:100%;margin-top:10px;color:var(--weui-FG-1);text-align:center;font-size:0.7em;">—— 到底了 ——
       </view>

@@ -1,0 +1,36 @@
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title bold">{{roomName}}</view>
+    <view class="page__desc text">{{roomPos}}</view>
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <view class="kind-list">
+      <block >
+        <view bindtap="openCheckin" class="kind-list__item">
+          <view class="weui-flex kind-list__item-hd">
+            <view class="weui-flex__item bold">会议签到
+            </view>
+            <image class="kind-list__img" src="../../static/images/icon_nav_checkin.svg" style="opacity:60%;">
+            </image>
+          </view>
+        </view>
+      </block>
+      <block >
+        <view bindtap="openGrab" class="kind-list__item">
+          <view class="weui-flex kind-list__item-hd">
+            <view class="weui-flex__item bold">会议室抢占
+            </view>
+            <image class="kind-list__img" src="../../static/images/icon_nav_grab.svg" style="opacity:60%;">
+            </image>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="page__ft">
+    <view class="weui-footer">
+
+      <view class="weui-footer__text text">EasyMeeting 会易 v1.0</view>
+    </view>
+  </view>
+</view>

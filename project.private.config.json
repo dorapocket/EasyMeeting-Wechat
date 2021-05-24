@@ -107,6 +107,30 @@
           "pathName": "pages/login/scanLogin/success",
           "query": "scene=loginToken%3D6cc8d5f5b2ea4fbf",
           "scene": null
+        },
+        {
+          "name": "pages/device/index",
+          "pathName": "pages/device/index",
+          "query": "scene=4",
+          "scene": null
+        },
+        {
+          "name": "pages/device/checkin/index",
+          "pathName": "pages/device/checkin/index",
+          "query": "mid=2",
+          "scene": null
+        },
+        {
+          "name": "pages/device/grab/index",
+          "pathName": "pages/device/grab/index",
+          "query": "mid=2",
+          "scene": null
+        },
+        {
+          "name": "pages/device/grab/result",
+          "pathName": "pages/device/grab/result",
+          "query": "mid=2",
+          "scene": null
         }
       ]
     }
