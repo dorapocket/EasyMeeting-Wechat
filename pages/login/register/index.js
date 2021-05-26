@@ -44,6 +44,8 @@ Page({
     });
   },
   submit(){
+    const app=getApp();
+    app.$track.trackAction('Button','Click','Register');
     const REGS = {
       username: /^[a-zA-z]\w{3,15}$/,
       telephone: /^1\d{10}$/,
@@ -78,7 +80,6 @@ Page({
       return;
     }
     let that=this;
-    let app=getApp();
     app.$request.post('/user/register',{
       username:this.data.username,
       realname:this.data.realname,
@@ -119,7 +120,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let app=getApp();
+    app.$track.trackPage('pages/login/register/index');
   },
 
   /**

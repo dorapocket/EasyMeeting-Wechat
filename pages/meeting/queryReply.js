@@ -7,42 +7,9 @@ Page({
    */
   data: {
     replyStat: [],
-    aid:''
+    aid:'',
+    theme:'反馈',
   },
-openActionSheet:function(e){
-  let that=this;
-  let app=getApp();
-  
-  wx.showActionSheet({
-    itemList: ['删除'],
-    success (res) {
-      let aid = e.currentTarget.dataset.idx;
-      let index =  e.currentTarget.dataset.index
-      if(res.tapIndex==0){
-        app.$track.trackAction('ActionSheet','Click','deleteMeeting');
-        app.$request.get('/meetings/deleteMeeting',{
-          aid
-        },{
-          success:function(res){
-            if(res.data.code==200){
-            wx.showToast({
-              title: '删除成功',
-              icon:'success',
-              duration:2000
-            });
-            let t=that.data.meetings;
-            t.splice(index,1); 
-            that.setData({
-              meetings:t
-            });
-          }
-          },
-          loadText:'操作中'
-        });
-      }
-    }
-  });
-},
   /**
    * 生命周期函数--监听页面加载
    */
@@ -89,6 +56,7 @@ openActionSheet:function(e){
             });
           }
           that.setData({
+            theme:res.data.theme,
             replyStat:temp
           })
         },

@@ -48,6 +48,8 @@ Page({
     });
   },
   sendReply: function () {
+    const app=getApp();
+    app.$track.trackAction('Button','Click','sendReply');
     if (this.data.processDialogChoice=='REJECT'&&this.data.processDialogReason == '') {
       wx.showToast({
         title: '请填写理由',
@@ -56,7 +58,6 @@ Page({
       return;
     }
     let that=this;
-    let app = getApp();
     app.$request.post('/message/messageFeedback', {
       msgId: this.data.notice[this.data.processDialogIndex].msgId,
       type: this.data.notice[this.data.processDialogIndex].msgType,

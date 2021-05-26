@@ -65,12 +65,18 @@ Page({
   },
 
   gotoCheckin: function () {
+    const app=getApp();
+    app.$track.trackAction('Button','Click','CantGrabGoCheckin');
     wx.navigateTo({
       url: '/pages/device/checkin/index?mid=' + this.data.mid,
     })
   },
   doGrab:function(){
-    
+    const app=getApp();
+    app.$track.trackAction('Button','Click','GrabRoom');
+    wx.navigateTo({
+      url: '/pages/device/grab/result?mid='+this.data.mid,
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -83,7 +89,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let app=getApp();
+    app.$track.trackPage('pages/admin/device/grab/index');
   },
 
   /**

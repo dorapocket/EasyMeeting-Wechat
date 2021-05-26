@@ -74,8 +74,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-let app=getApp();
-app.$track.trackPage('pages/admin/meetingRoom/add');
+    let app=getApp();
+    app.$track.trackPage('pages/admin/meetingRoom/add');
   },
 
   /**

@@ -18,6 +18,7 @@ openActionSheet:function(e){
       let aid = e.currentTarget.dataset.idx;
       let index =  e.currentTarget.dataset.index
       if(res.tapIndex==0){
+        app.$track.trackAction('Button','Click','lookQueryReply');
         wx.navigateTo({
           url: '/pages/meeting/queryReply?aid='+aid,
         })

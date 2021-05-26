@@ -64,6 +64,7 @@ Page({
       btnLoading:true
     });
     const app=getApp();
+    app.$track.trackAction('Button','Click','Checkin');
     if(this.data.aid!=''){
         app.$request.get('/wechat/checkIn',{
       aid:this.data.aid
@@ -107,7 +108,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let app=getApp();
+    app.$track.trackPage('pages/admin/device/checkin/index');
   },
 
   /**

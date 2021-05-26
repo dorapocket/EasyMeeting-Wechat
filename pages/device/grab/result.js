@@ -47,6 +47,11 @@ Page({
   nvback:function(){
     wx.navigateBack();
   },
+  nvhome:function(){
+    wx.reLaunch({
+      url: '/pages/index/index',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -59,7 +64,7 @@ Page({
    */
   onShow: function () {
     let app=getApp();
-    app.$track.trackPage('pages/login/scanLogin/success');
+    app.$track.trackPage('pages/admin/device/grab/result');
   },
 
   /**

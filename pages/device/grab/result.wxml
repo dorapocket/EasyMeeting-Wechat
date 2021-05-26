@@ -17,7 +17,7 @@
 		<view class="weui-msg__opr-area">
 			<view class="weui-btn-area">
         <a class="weui-btn weui-btn_default" bindtap="nvback">返回上级</a>
-				<a  class="weui-btn weui-btn_primary"><navigator url="/pages/index/index">返回主页</navigator></a>
+				<a  class="weui-btn weui-btn_primary" bindtap="nvhome">返回主页</a>
 				
 			</view>
 		</view>
