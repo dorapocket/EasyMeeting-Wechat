@@ -6,23 +6,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-    meetings: [],
+    replyStat: [],
+    aid:''
   },
 openActionSheet:function(e){
   let that=this;
   let app=getApp();
   
   wx.showActionSheet({
-    itemList: ['查看回复状态','删除'],
+    itemList: ['删除'],
     success (res) {
       let aid = e.currentTarget.dataset.idx;
       let index =  e.currentTarget.dataset.index
       if(res.tapIndex==0){
-        wx.navigateTo({
-          url: '/pages/meeting/queryReply?aid='+aid,
-        })
-      }
-      else if(res.tapIndex==1){
         app.$track.trackAction('ActionSheet','Click','deleteMeeting');
         app.$request.get('/meetings/deleteMeeting',{
           aid
@@ -50,7 +46,14 @@ openActionSheet:function(e){
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function (query) {
+    const scene = decodeURIComponent(query.aid);
+    this.setData({
+      aid:scene
+    })
+    this.getMeetingData(scene);
+    let app=getApp();
+    app.$track.trackPage('pages/meeting/queryReply');
   },
 
   /**
@@ -64,31 +67,29 @@ openActionSheet:function(e){
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getMeetingData();
-    let app=getApp();
-    app.$track.trackPage('pages/meeting/meetingAdmin');
+    
   },
-  getMeetingData(){
+  getMeetingData(aid){
     let that=this;
     let app=getApp();
     app.$request.get(
-      '/meetings/getMyMeetingList',{},
+      '/meetings/queryUserReply',{
+        aid
+      },
       {
         success:function(res){
           let temp=[];
           for(let data of res.data.data){
             temp.push({
-              aid: data.aid,
-              theme: data.theme,
-              desc: ['地点：'+data.mname+'（'+data.mpos+')', '时间：'+utils.formatTime("YYYY年mm月dd日 HH:MM",new Date(data.time_begin))+'-'+utils.formatTime("HH:MM",new Date(data.time_end))],
-              isGrab:data.isGrab,
-              from: '我自己',
-              msgTime: utils.formatTime("YYYY年mm月dd日 HH:MM",new Date(data.create_time)),
-              extra: '',
+              uid: data.uid,
+              checked: data.checked,
+              reply:data.reply,
+              checkin:data.checkin==1?true:false,
+              name:data.name
             });
           }
           that.setData({
-            meetings:temp
+            replyStat:temp
           })
         },
         loadText:'加载中'

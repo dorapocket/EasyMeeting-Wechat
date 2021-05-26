@@ -1,0 +1,51 @@
+<!--pages/admin/meetingAdmin.wxml-->
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title bold">{{theme}}</view>
+    <view class="page__desc text">参会状态查询</view>
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <view class="kind-list">
+      <view class="weui-panel">
+        <view class="weui-panel__hd">参会人员反馈</view>
+        <view class="weui-panel__bd" wx:for="{{replyStat}}" wx:key="index" id="{{index}}">
+          <view class="weui-media-box weui-media-box_text" data-index="{{index}}" data-idx="{{item.uid}}">
+            <h4 class="weui-media-box__title">{{item.name}}</h4>
+            <view class="weui-media-box__desc">
+              <view>
+                邀请回复：
+                <text wx:if="{{item.checked==1}}" style="color:rgb(88,189,106)">已确认</text>
+                <text wx:if="{{item.checked==2}}" style="color:rgb(231,94,88)">已拒绝</text>
+                <text wx:if="{{item.checked==0}}" style="color:rgb(246,196,67)">未回复</text>
+              </view>
+              <view wx:if="{{item.checked==2}}">
+                拒绝理由：{{item.reply}}
+              </view>
+              <view>
+                签到状态：
+                <text wx:if="{{item.checkin}}" style="color:rgb(88,189,106)">已签到</text>
+                <text wx:if="{{!item.checkin}}" style="color:rgb(231,94,88)">未签到</text>
+              </view>
+            </view>
+            <view class="weui-media-box__info">
+              <view class="weui-media-box__info__meta">{{item.from}}</view>
+              <view class="weui-media-box__info__meta">{{item.msgTime}}</view>
+              <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{item.extra}}</view>
+
+            </view>
+          </view>
+        </view>
+        <view wx:if="{{meetings.length==0}}" style="color:var(--weui-FG-1);text-align:center;padding:40rpx;">
+          没有会议
+        </view>
+      </view>
+      <view style="width:100%;margin-top:10px;color:var(--weui-FG-1);text-align:center;font-size:0.7em;">—— 到底了 ——
+      </view>
+    </view>
+  </view>
+  <view class="page__ft">
+    <view class="weui-footer">
+      <view class="weui-footer__text text">EasyMeeting 会易 v1.0</view>
+    </view>
+  </view>
+</view>

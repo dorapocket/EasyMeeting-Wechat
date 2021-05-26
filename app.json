@@ -17,7 +17,8 @@
     "pages/device/index",
     "pages/device/checkin/index",
     "pages/device/grab/index",
-    "pages/device/grab/result"
+    "pages/device/grab/result",
+    "pages/meeting/queryReply"
   ],
   "entryPagePath": "pages/index/index",
   "window": {

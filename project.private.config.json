@@ -131,6 +131,12 @@
           "pathName": "pages/device/grab/result",
           "query": "mid=2",
           "scene": null
+        },
+        {
+          "name": "pages/meeting/queryReply",
+          "pathName": "pages/meeting/queryReply",
+          "query": "aid=13",
+          "scene": null
         }
       ]
     }
