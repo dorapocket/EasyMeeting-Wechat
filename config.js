@@ -1,6 +1,6 @@
 const cfg={
-  "server_ip":"https://lgyserver.top:65534",
+  "server_ip":"https://yourserver:port",
   "track_enable":true,
-  "track_ip":"http://analytics.lgyserver.top"
+  "track_ip":"http://yourAnalyticServer:port"
 }
 module.exports=cfg;

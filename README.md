@@ -17,6 +17,16 @@ Easymeeting supports various functions such as conference room creation and mana
 本工程是微信小程序部分代码。
 This project is part of the Wechat Miniprogram code.
 
+若要使用，请：
+- 重命名project.config.sample.json为project.config.json
+- 在project.config.json内写入appid（在微信开放平台获取）
+- 修改config.js为你的服务器地址
+
+To use, please:
+- Rename project.config.sample.json to project.config.json
+- Write appID in project.config.json (obtained from wechat Open platform)
+- Modify config.js to your server address
+
 ![wxacode](screenshots/wxacode.jpg)
 
 支持功能 Support functions: 
@@ -27,9 +37,9 @@ This project is part of the Wechat Miniprogram code.
 - [x]  WebRTC无线投屏 Wireless screen casting
 - [x]  会议室管理 Conference room management
 - [x]  设备管理 Device management
-- [x]  设备绑定（小程序实现）Device binding (applet implementation)
-- [x]  会议签到（小程序实现）Meeting check-in (applet implementation)
-- [x]  会议室抢占（小程序实现）Meeting room preemption (small program implementation)
+- [x]  设备绑定（小程序实现）Device binding (miniprogram implementation)
+- [x]  会议签到（小程序实现）Meeting check-in (miniprogram implementation)
+- [x]  会议室抢占（小程序实现）Meeting room preemption (miniprogram implementation)
 - [x]  会议邀请处理 Meeting invitation processing
 - [x]  签到状态查询 Check-in status query
 - [ ]  设置 Settings
