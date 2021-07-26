@@ -1,8 +1,9 @@
 <div align= "center">
 <img align="center" src="screenshots/meetingroom.png" />
+<h2 align="center" style="">EasyMeeting</h2>
+<h3 align="center" style="">Wechat Miniprogram</h3>
+<br/><br/>
 </div>
-
-# EasyMeeting
 
 ## About Easymeeting
 
